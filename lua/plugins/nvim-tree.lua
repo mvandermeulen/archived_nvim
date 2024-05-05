@@ -168,8 +168,5 @@ nvim_tree.setup {
     -- auto_resize = true,
     preserve_window_proportions = false,
     side = 'left', -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
-    mappings = {
-      custom_only = true, -- custom only false will merge the list with the default mappings. If true, it will only use your list to set the mappings
-    },
   },
 }

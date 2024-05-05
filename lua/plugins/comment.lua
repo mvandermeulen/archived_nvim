@@ -45,7 +45,7 @@ comment.setup({
 	},
 
 	---Pre-hook, called before commenting the line
-  pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+  --pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
 	--[[ pre_hook = function(ctx) ]]
 	--[[ 	local U = require("Comment.utils") ]]
 

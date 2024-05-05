@@ -14,30 +14,6 @@ end
 --[[ ft_to_parser.motoko = 'typescript' ]]
 
 configs.setup {
-  -- ensure_installed = {
-  --   'bash',
-  --   'c',
-  --   'cmake',
-  --   'css',
-  --   'dockerfile',
-  --   'go',
-  --   'hcl',
-  --   'html',
-  --   'http',
-  --   'javascript',
-  --   'json',
-  --   'latex',
-  --   'lua',
-  --   'markdown',
-  --   'python',
-  --   'regex',
-  --   'scss',
-  --   'toml',
-  --   'typescript',
-  --   'vue',
-  --   'yaml',
-  --   'vim',
-  -- }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ensure_installed = "all",
   query_linter = {
     enable = true,
@@ -45,11 +21,6 @@ configs.setup {
     lint_events = { 'BufWrite', 'CursorHold' },
   },
   sync_install = true,
-  --context_commentstring = { enable = true },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
   ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension

@@ -107,7 +107,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation({})<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gpc", "<cmd>lua require('goto-preview').close_all_win()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references({})<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "", "<cmd>lua <CR>", opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "", "<cmd>lua <CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
@@ -129,7 +129,7 @@ end
 function M.common_on_attach(client, bufnr)
   vim.notify("LSP Server: " .. client.name .. " starting...")
   -- Set omnifunc
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   -- Helper function
   local opts = {noremap = true, silent = true}
   local function bufnnoremap(lhs, rhs)
@@ -164,7 +164,7 @@ function M.common_on_attach(client, bufnr)
   -- bufnnnoremap("<leader>P", "<Cmd>Glow<CR>")
 
   if client.server_capabilities.document_formatting then
-    cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
   end
 end
 

@@ -44,11 +44,11 @@ P.standard_install = {
 }
 
 P.extended_install = {
-  { 'decaycs/decay.nvim', as = 'decay'},
-  { 'daltonmenezes/aura-theme', rtp = 'packages/neovim'},
-  { 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*', config = 'rpine'},
+  { 'decaycs/decay.nvim', name = 'decay'},
+  { 'rose-pine/neovim', name = 'rose-pine', version = 'v1.*', config = 'rpine'},
   { 'EdenEast/nightfox.nvim', config = 'nightfox'},
-  { 'AlexvZyl/nordic.nvim', as = 'alexvzyl-nordic' },
+  { 'AlexvZyl/nordic.nvim', name = 'alexvzyl-nordic' },
+  { "catppuccin/nvim", name = "catppuccin" },
 }
 
 return P

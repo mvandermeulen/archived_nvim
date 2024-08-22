@@ -49,6 +49,7 @@ map("n", "N", "Nzz", default_options) -- center search results
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_options) -- Deal with visual line wraps
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_options) -- Deal with visual line wraps
 map("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", default_options) -- Cancel search highlighting with ESC
+map("n", "m/", "<cmd>MarksListAll<CR>", default_options) -- Marks from all opened buffers
 
 
 -------------------------------
@@ -179,8 +180,10 @@ map("n", "<C-\\>", "<Plug>(comment_toggle_linewise_current)", default_options)
 --map("n", "#", "<cmd>lua require'starlite'.hash()<CR>", default_options)
 --map("n", "g#", "<cmd>lua require'starlite'.g_hash()<CR>", default_options)
 
-map("n", "<C-,>", ":Fzflua files<CR>")
-map("n", "<C-P>", ":Fzflua files<CR>")
+-- TODO: Doesn't work
+-- FIXED
+map("n", "<C-,>", ":FzfLua files<CR>")
+map("n", "<C-P>", ":FzfLua<CR>")
 
 --map("n", "", "")
 

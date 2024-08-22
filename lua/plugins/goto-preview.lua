@@ -4,9 +4,9 @@ require('goto-preview').setup {
   border = {"↖", "─" ,"┐", "│", "┘", "─", "└", "│"}; -- Border characters of the floating window
   default_mappings = false; -- Bind default mappings
   debug = false; -- Print debug information
-  opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
+  -- opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
   resizing_mappings = false; -- Binds arrow keys to resizing the floating window.
-  post_open_hook = nil; -- A function taking two arguments, a buffer and a window to be ran as a hook.
+  -- post_open_hook = nil; -- A function taking two arguments, a buffer and a window to be ran as a hook.
   opacity = 10,
   post_open_hook = function(_, win)
     vim.api.nvim_win_set_config(win, {

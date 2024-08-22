@@ -15,5 +15,6 @@
 #snippets
 #notes/
 old/
-plugin/packer_compiled.lua
+lazy-lock.json
+.nvim
 

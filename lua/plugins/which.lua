@@ -134,7 +134,7 @@ local mappings = {
   ['<Tab>'] = { '<cmd>e#<cr>', 'Switch to previously opened buffer' },
   ['e'] = { '<cmd>NvimTreeToggle<cr>', 'Explorer' },
   ['q'] = { '<cmd>NvimTreeClose<cr>:q<cr>', 'Quit Tab' },
-  ['x'] = { '<cmd>Bdelete<cr>', 'Close Buffer' },
+  ['x'] = { ':TSContextDisable<cr>:TSBufDisable rainbow<cr>:TSBufDisable highlight<cr><cmd>Bdelete<cr>', 'Close Buffer' },
   -- ['/'] = { '<Plug>(comment_toggle_linewise_current)', 'Comment' },
   --[[ ['/'] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', 'Comment' }, ]]
   --["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
@@ -156,10 +156,9 @@ local mappings = {
     L = { '<cmd>BufferLineSortByExtension<cr>', 'Sort BufferLines automatically by extension' },
     s = { '<cmd>noautocmd w<CR>', 'Save (no autocmd)' },
   },
-  c = require('mappings.clipboard').mappings,
+  c = { '<cmd>:Cheatsheet<cr>', 'Cheatsheet' },
   d = require('mappings.diagnostics').mappings,
   f = require('mappings.files').mappings,
-  F = require('mappings.find').mappings,
   g = require('mappings.git').mappings,
   h = require('mappings.harpoon').mappings,
   l = {
@@ -189,16 +188,16 @@ local mappings = {
     t = { '<cmd>lua vim.lsp.buf.type_definition()<cr>', 'Type Definition' },
     w = { '<cmd>Telescope diagnostics<cr>', 'Workspace Diagnostics' },
   },
+  L = { '<cmd>:Lazy<cr>', 'Lazy' },
   m = require('mappings.misc').mappings,
-  p = require('mappings.prompts').mappings,
-  P = require('mappings.packer').mappings,
+  o = { '<cmd>SymbolsOutline<cr>', 'Symbols Outline' },
   s = require('mappings.search').mappings,
-  S = require('mappings.settings').mappings,
+  -- S = require('mappings.settings').mappings,
   t = require('mappings.terminal').mappings,
-  T = require('mappings.treesitter').mappings,
+  T = require('mappings.telescope').mappings,
   w = require('mappings.window').mappings,
   W = require('mappings.workspace').mappings,
-  z = require('mappings.focus').mappings,
+  -- z = require('mappings.focus').mappings,
 }
 
 local vmappings = {
@@ -211,3 +210,5 @@ which_key.register(non_leader_mappings) -- register non leader based mappings
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
 --which_key.register(m_mappings, m_opts)
+
+

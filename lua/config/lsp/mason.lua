@@ -48,9 +48,9 @@ local settings = {
   ui = {
     border = "rounded",
     icons = {
-      package_installed = "◍",
-      package_pending = "◍",
-      package_uninstalled = "◍",
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗",
     },
   },
   log_level = vim.log.levels.INFO,

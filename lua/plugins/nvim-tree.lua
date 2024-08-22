@@ -83,6 +83,7 @@ end
 
 nvim_tree.setup {
   on_attach = on_attach,
+  sync_root_with_cwd = true,
   disable_netrw = true, -- disables netrw completely
   hijack_netrw = true, -- hijack netrw window on startup
   --[[ open_on_setup = false, -- open the tree when running this setup function ]]
@@ -104,10 +105,10 @@ nvim_tree.setup {
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
     enable = true,
-    update_cwd = false, -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
+    update_root = true, -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
     ignore_list = { '.git', 'node_modules', '.cache' }, -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
   },
-  system_open = { cmd = 'opem', args = { '--reveal', } }, -- configuration options for the system open command (`s` in the tree by default)
+  system_open = { cmd = 'open', args = { '--reveal', } }, -- configuration options for the system open command (`s` in the tree by default)
   trash = { cmd = 'trash-put', require_confirm = true },
   actions = {
     change_dir = { enable = true, global = false, restrict_above_cwd = false },
